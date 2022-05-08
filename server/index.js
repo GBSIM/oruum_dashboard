@@ -17,7 +17,6 @@ app.post('/api/stock/price', (req,res) => {
                 '|| end date: ', req.body.endDate)
     get_price(req.body.ticker, req.body.startDate, req.body.endDate, (priceStock, err) => {
         console.log("stock price collected!")
-        // console.log(priceStock);
         if (err) {
             console.log('collecting stock price failed')
         }
@@ -26,6 +25,7 @@ app.post('/api/stock/price', (req,res) => {
             "close": priceStock.close,
             "open": priceStock.open,
             "high": priceStock.high,
-            "low": priceStock.low})
+            "low": priceStock.low
+        })
     })
 });
